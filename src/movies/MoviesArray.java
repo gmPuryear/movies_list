@@ -105,4 +105,9 @@ public class MoviesArray {
             new Movie("Yankee Doodle Dandy", "musical")
         };
     }
+    public static void displayAllMovies() {
+        for (Movie movie : findAll()) {
+            System.out.println(movie.getName() + " -- "+ movie.getCategory());
+        }
+    }
 }
