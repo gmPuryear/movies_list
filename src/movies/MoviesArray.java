@@ -114,14 +114,9 @@ public class MoviesArray {
             for (Movie Movie : findAll()) {
                 System.out.println(Movie.getName() + " -- " + Movie.getCategory());
             }
-            System.out.println("\nDo you want to return to main menu? y or n");
+            System.out.print("\nDo you want to return to main menu? y or n: ");
             String goToMenu = scanner.next();
-            if (goToMenu.equalsIgnoreCase("y")) {
-                UserSelection.userSelection();
-            } else {
-                System.out.println("Good bye!");
-                System.exit(0);
-            }
+            ContinueProgram.continueProgram(goToMenu);
 
 
         } else if (userSelection == 2) {
@@ -131,6 +126,10 @@ public class MoviesArray {
                     System.out.println(movie.getName() + " -- " + movie.getCategory());
                 }
             }
+            System.out.print("\nDo you want to return to main menu? y or n: ");
+            String goToMenu = scanner.next();
+            ContinueProgram.continueProgram(goToMenu);
+
         } else if (userSelection == 3) {
             // displays all drama movies
             for (Movie movie : findAll()) {
@@ -138,6 +137,9 @@ public class MoviesArray {
                     System.out.println(movie.getName() + " -- " + movie.getCategory());
                 }
             }
+            System.out.print("\nDo you want to return to main menu? y or n: ");
+            String goToMenu = scanner.next();
+            ContinueProgram.continueProgram(goToMenu);
         } else if (userSelection == 4) {
             // displays all horror movies
             for (Movie movie : findAll()) {
@@ -145,6 +147,9 @@ public class MoviesArray {
                     System.out.println(movie.getName() + " -- " + movie.getCategory());
                 }
             }
+            System.out.print("\nDo you want to return to main menu? y or n: ");
+            String goToMenu = scanner.next();
+            ContinueProgram.continueProgram(goToMenu);
         } else if (userSelection == 5) {
             // displays all
             for (Movie movie : findAll()) {
@@ -152,7 +157,11 @@ public class MoviesArray {
                     System.out.println(movie.getName() + " -- " + movie.getCategory());
                 }
             }
-        } else if (userSelection == 0){
+            System.out.print("\nDo you want to return to main menu? y or n: ");
+            String goToMenu = scanner.next();
+            ContinueProgram.continueProgram(goToMenu);
+        }
+        else if (userSelection == 0){
             System.out.println("Good bye!");
             System.exit(0);
         }
