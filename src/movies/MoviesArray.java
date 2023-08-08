@@ -1,5 +1,7 @@
 package movies;
 
+import java.util.Scanner;
+
 public class MoviesArray {
     public static Movie[] findAll() {
         return new Movie[]{
@@ -105,9 +107,54 @@ public class MoviesArray {
             new Movie("Yankee Doodle Dandy", "musical")
         };
     }
-    public static void displayAllMovies() {
-        for (Movie movie : findAll()) {
-            System.out.println(movie.getName() + " -- "+ movie.getCategory());
+    public static void displayMovies(int userSelection) {
+        Scanner scanner = new Scanner(System.in);
+        if (userSelection == 1) {
+            // displays all movies
+            for (Movie Movie : findAll()) {
+                System.out.println(Movie.getName() + " -- " + Movie.getCategory());
+            }
+            System.out.println("\nDo you want to return to main menu? y or n");
+            String goToMenu = scanner.next();
+            if (goToMenu.equalsIgnoreCase("y")) {
+                UserSelection.userSelection();
+            } else {
+                System.out.println("Good bye!");
+                System.exit(0);
+            }
+
+
+        } else if (userSelection == 2) {
+            // displays all animated movies
+            for (Movie movie : findAll()) {
+                if (movie.getCategory().equals("animated")) {
+                    System.out.println(movie.getName() + " -- " + movie.getCategory());
+                }
+            }
+        } else if (userSelection == 3) {
+            // displays all drama movies
+            for (Movie movie : findAll()) {
+                if (movie.getCategory().equals("drama")) {
+                    System.out.println(movie.getName() + " -- " + movie.getCategory());
+                }
+            }
+        } else if (userSelection == 4) {
+            // displays all horror movies
+            for (Movie movie : findAll()) {
+                if (movie.getCategory().equals("horror")) {
+                    System.out.println(movie.getName() + " -- " + movie.getCategory());
+                }
+            }
+        } else if (userSelection == 5) {
+            // displays all
+            for (Movie movie : findAll()) {
+                if (movie.getCategory().equals("scifi")) {
+                    System.out.println(movie.getName() + " -- " + movie.getCategory());
+                }
+            }
+        } else if (userSelection == 0){
+            System.out.println("Good bye!");
+            System.exit(0);
         }
     }
 }

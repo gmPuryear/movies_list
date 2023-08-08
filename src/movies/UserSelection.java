@@ -13,11 +13,9 @@ public class UserSelection {
 
         // takes user input then calls the appropriate function
         int userSelection = scanner.nextInt();
+        MoviesArray.displayMovies(userSelection);
 
-        if (userSelection == 1) {
-            // displays all movies
-            MoviesArray.displayAllMovies();
-        }
+
 
     }
 }
