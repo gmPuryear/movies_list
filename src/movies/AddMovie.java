@@ -13,6 +13,7 @@ public class AddMovie {
         String categoryOfMovie = scanner.next();
 
         Movie movieToAdd = new Movie(titleOfMovie, categoryOfMovie);
+        System.out.println("this is the new movie: " + movieToAdd.getName() + " " + movieToAdd.getCategory());
         int lengthOfNewMovieArray = MoviesArray.findAll().length + 1;
         System.out.println("explicit length of new array: " + lengthOfNewMovieArray);
         Movie[] newMovieArray = new Movie[lengthOfNewMovieArray];
@@ -25,13 +26,16 @@ public class AddMovie {
 
         for (int i = 0; i < MoviesArray.findAll().length; i++) {
             if (i == MoviesArray.findAll().length - 1) {
-                System.out.println(i + "end of existing array");
+                System.out.println(i + " end of existing array");
                 newMovieArray[i + 1] = movieToAdd;
 //                break;
 //                System.out.println(MoviesArray.findAll()[i]);
 //                System.out.println(newMovieArray[i]);
             } else {
-                System.out.println(i + "not end of array");
+                System.out.println(i + " not end of array");
+                System.out.println(MoviesArray.findAll()[i].getName() + " " + MoviesArray.findAll()[i].getCategory());
+                MoviesArray.findAll()[i] = newMovieArray[i];
+                System.out.println(newMovieArray[i]);
             }
 
 //            newMovieArray[i].setName(MoviesArray.findAll()[i].getName());
@@ -40,9 +44,9 @@ public class AddMovie {
 //            System.out.println(newMovieArray[i].getName());
 //            System.out.println(newMovieArray[i].getCategory());
         }
-        for (Movie movie : newMovieArray) {
-            System.out.println(movie.getName() + " -- " + movie.getCategory());
-        }
+//        for (Movie movie : newMovieArray) {
+//            System.out.println(movie.getName() + " -- " + movie.getCategory());
+//        }
     }
 
 }
