@@ -160,8 +160,6 @@ public class MoviesArray {
             System.out.print("\nDo you want to return to main menu? y or n: ");
             String goToMenu = scanner.next();
             ContinueProgram.continueProgram(goToMenu);
-        } else if (userSelection == 6) {
-            AddMovie.addMovie();
         }
         else if (userSelection == 0){
             System.out.println("Good bye!");

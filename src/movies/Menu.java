@@ -8,7 +8,6 @@ public class Menu {
                 "\n3 - view movies in the drama category" +
                 "\n4 - view movies in the horror category" +
                 "\n5 - view movies in the scifi category" +
-                "\n6 = Add movie" +
                 "\n0 - exit\n";
         return menu;
     }
